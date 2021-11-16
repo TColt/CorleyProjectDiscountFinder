@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="untitled" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="addFilterButton" layoutX="14.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="25.0" prefWidth="79.0" text="Add Filter" />
+            <Button fx:id="clearFiltersList" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleClearButton" text="Clear Filters" />
+            <TextField fx:id="filterItemBy" layoutX="103.0" layoutY="39.0" />
+            <ListView fx:id="itemsListView" layoutX="14.0" layoutY="87.0" prefHeight="277.0" prefWidth="529.0" />
+            <Button layoutX="443.0" layoutY="39.0" mnemonicParsing="false" text="Favorite" />
+         </children></AnchorPane>
+  </content>
+</TitledPane>
