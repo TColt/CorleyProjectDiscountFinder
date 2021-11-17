@@ -1,5 +1,6 @@
 package edu.westga.cs3211.discount_Finder;
 
+
 import edu.westga.cs3211.discount_Finder.model.DiscountFinder;
 import edu.westga.cs3211.discount_Finder.model.Item;
 import javafx.beans.property.SimpleListProperty;
