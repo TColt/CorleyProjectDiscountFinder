@@ -1,4 +1,4 @@
-package edu.westga.cs3211.discount_Finder;
+package edu.westga.cs3211.discount_Finder.view.codebehind;
 
 
 import edu.westga.cs3211.discount_Finder.model.DiscountFinder;
