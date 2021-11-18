@@ -1,4 +1,4 @@
-package edu.westga.cs3211.discount_Finder.test.model.discount_Finder.TestDiscountFinder;
+package edu.westga.cs3211.discountFinder.test.model.discountFinder.TestDiscountFinder;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import edu.westga.cs3211.discount_Finder.model.DiscountFinder;
-import edu.westga.cs3211.discount_Finder.model.Item;
+import edu.westga.cs3211.discountFinder.model.DiscountFinder;
+import edu.westga.cs3211.discountFinder.model.Item;
 
 class TestfindDiscounts {
     

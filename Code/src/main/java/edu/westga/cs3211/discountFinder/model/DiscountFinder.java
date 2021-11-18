@@ -1,4 +1,4 @@
-package edu.westga.cs3211.discount_Finder.model;
+package edu.westga.cs3211.discountFinder.model;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,7 @@ public class DiscountFinder {
         ArrayList<Item> discountedItems = new ArrayList<Item>();
 
         for (Item item : this.items) {
-            if (item.isDiscounted() && item.getName().equals(itemName)) {
+            if (item.isDiscounted() && item.getName().toLowerCase().contains(itemName.toLowerCase())) {
                 discountedItems.add(item);
             }
         }

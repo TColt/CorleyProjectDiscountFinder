@@ -1,8 +1,7 @@
-package edu.westga.cs3211.discount_Finder.view.codebehind;
+package edu.westga.cs3211.discountFinder.view.codebehind;
 
-
-import edu.westga.cs3211.discount_Finder.model.DiscountFinder;
-import edu.westga.cs3211.discount_Finder.model.Item;
+import edu.westga.cs3211.discountFinder.model.DiscountFinder;
+import edu.westga.cs3211.discountFinder.model.Item;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-public class DiscountFinderCodeBehind {
+public class MainWindow {
     @FXML
     private Button addFilterButton;
 
@@ -20,21 +19,18 @@ public class DiscountFinderCodeBehind {
     private Button clearFiltersList;
 
     @FXML
-    private TextField filterItemBy;
+    private TextField filterItemByTextField;
 
     @FXML
     private ListView<Item> itemsListView;
 
 	private DiscountFinder finder;
 
-    public DiscountFinderCodeBehind() {
-        this.finder = new DiscountFinder();
-		this.populateList();
-		this.bindListView();
-    }
 
-    private void bindListView() {
-		this.itemsListView.itemsProperty().bind(new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.getItems())));
+    private void initializeListView() {
+		// this.itemsListView.itemsProperty().bind(new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.getItems())));
+		ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.getItems()));
+		this.itemsListView.itemsProperty().setValue(filtered);
 	}
 
 	private void populateList() {
@@ -55,8 +51,12 @@ public class DiscountFinderCodeBehind {
 
 	@FXML
     void handleAddButton(ActionEvent event) {
-		ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.findDiscountsForItem(this.filterItemBy.getText())));
-		this.itemsListView.itemsProperty().setValue(filtered);
+		if (this.filterItemByTextField.getText().isEmpty()) {
+			this.initializeListView();
+		} else {
+			ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.findDiscountsForItem(this.filterItemByTextField.getText())));
+			this.itemsListView.itemsProperty().setValue(filtered);
+		}
     }
 
 	@FXML
@@ -64,4 +64,10 @@ public class DiscountFinderCodeBehind {
 		this.itemsListView.itemsProperty().setValue(new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.getItems())));
     }
 
+	@FXML
+	public void initialize() {
+		this.finder = new DiscountFinder();
+		this.populateList();
+		this.initializeListView();
+	}
 }

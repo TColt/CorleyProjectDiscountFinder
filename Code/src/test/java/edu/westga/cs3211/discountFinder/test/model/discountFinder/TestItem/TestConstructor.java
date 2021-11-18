@@ -1,8 +1,8 @@
-package edu.westga.cs3211.discount_Finder.test.model.discount_Finder.TestItem;
+package edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem;
 
 import org.junit.jupiter.api.Test;
 
-import edu.westga.cs3211.discount_Finder.model.Item;
+import edu.westga.cs3211.discountFinder.model.Item;
 
 import static org.junit.jupiter.api.Assertions.*;
 

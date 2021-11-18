@@ -1,4 +1,4 @@
-package edu.westga.cs3211.discount_Finder.model;
+package edu.westga.cs3211.discountFinder.model;
 
 public class Item {
 
@@ -50,5 +50,10 @@ public class Item {
 
     public boolean isDiscounted() {
         return this.discounted;
+    }
+
+    public String toString() {
+        return this.name + " " + this.brand + " " + this.store + " " + this.price + " " + this.discounted;
+        
     }
 }
