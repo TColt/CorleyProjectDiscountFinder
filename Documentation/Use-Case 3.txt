@@ -1,0 +1,10 @@
+Use-Case 3: Find Discount
+Actor: Shopper
+Shopper wants to limit discounts based on seller
+Flow:
+1.	Shopper looks for discounts (use-case 1)
+2.	Shopper selects item from list
+3.	System displays items from seller
+Alternatives:
+	2a. Shopper types in seller in search bar
+	3a. Systems displays no items if no discounts exist for item
