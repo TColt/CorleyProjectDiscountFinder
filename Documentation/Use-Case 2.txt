@@ -1,9 +1,0 @@
-Use-Case 2: Find Item
-Actor: Shopper
-Shopper wants to find specific item
-Flow:
-1.	Shopper looks for discounts (use-case 1)
-2.	Shopper enters an item
-3.	System displays discounts based on shopper’s item
-Alternatives:
-3a. Systems displays no items if no discounts exist for item

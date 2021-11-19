@@ -1,8 +1,0 @@
-Use-Case 7: Favorite a seller
-Actor: Shopper
-Shopper wants to favorite a seller so its easier to find discount
-Flow:
-1.	Shopper looks for discounts (use-case 1)
-2.	Shopper enters seller to favorite
-3.	System marks items from favorite seller
-Alternatives:
