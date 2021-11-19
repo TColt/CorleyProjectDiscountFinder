@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 
 public class MainWindow {
@@ -23,7 +25,13 @@ public class MainWindow {
 
     @FXML
     private ListView<Item> itemsListView;
+	
+	@FXML
+    private SplitMenuButton filterChoices;
 
+	@FXML
+    private MenuButton filterChoices2;
+	
 	private DiscountFinder finder;
 
 
