@@ -1,0 +1,9 @@
+Use-Case 5: Limit discounts based on category
+Actor: Shopper
+Shopper wants to limit discounts based on distance to seller
+Flow:
+1.	Shopper looks for discounts (use-case 1)
+2.	Shopper enters maximum distance
+3.	System displays items based on distance to seller
+Alternatives:
+	3a. Systems displays no items if no discounts exist within distance
