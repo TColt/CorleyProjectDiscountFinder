@@ -2,6 +2,10 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -11,6 +15,20 @@
       <Button fx:id="clearFiltersList" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleClearButton" text="Clear Filters" />
       <TextField fx:id="filterItemByTextField" layoutX="103.0" layoutY="39.0" />
       <ListView fx:id="itemsListView" layoutX="11.0" layoutY="82.0" prefHeight="275.0" prefWidth="523.0" />
-      <Button layoutX="443.0" layoutY="39.0" mnemonicParsing="false" text="Favorite" />
+      <Button layoutX="470.0" layoutY="39.0" mnemonicParsing="false" text="Favorite" />
+      <SplitMenuButton fx:id="filterChoices" layoutX="265.0" layoutY="39.0" mnemonicParsing="false" text="Filter By">
+        <items>
+            <RadioMenuItem mnemonicParsing="false" text="Name" />
+            <RadioMenuItem mnemonicParsing="false" text="Seller" />
+            <RadioMenuItem mnemonicParsing="false" text="Category" />
+            <RadioMenuItem mnemonicParsing="false" text="Distance" />
+        </items>
+      </SplitMenuButton>
+      <MenuButton fx:id="filterChoices2" layoutX="364.0" layoutY="39.0" mnemonicParsing="false" text="MenuButton">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Twest" />
+          <MenuItem mnemonicParsing="false" text="Test" />
+        </items>
+      </MenuButton>
    </children>
 </AnchorPane>
