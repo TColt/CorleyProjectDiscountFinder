@@ -1,0 +1,9 @@
+Use-Case 4: Limit discounts based on category
+Actor: Shopper
+Shopper wants to limit discounts based on a category
+Flow:
+1.	Shopper looks for discounts (use-case 1)
+2.	Shopper selects category
+3.	System displays items of selected category
+Alternatives:
+	3a. Systems displays no items if no discounts exist for item
