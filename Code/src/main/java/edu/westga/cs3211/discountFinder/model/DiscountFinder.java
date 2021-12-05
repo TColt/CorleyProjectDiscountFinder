@@ -3,18 +3,17 @@ package edu.westga.cs3211.discountFinder.model;
 import java.util.ArrayList;
 
 public class DiscountFinder {
-   
-    private ArrayList<Item> items;
-    CreateDiscountList test = new CreateDiscountList();
 
+    private ArrayList<Item> items;
+    private CreateDiscountList generatedList;
 
     public DiscountFinder() {
-        this.items = test.returnItemList();
+        this.items = this.generatedList.returnItemList();
     }
-     
+
     public ArrayList<Item> getItems() {
         return this.items;
-     
+
     }
 
     public void addItem(Item item) {

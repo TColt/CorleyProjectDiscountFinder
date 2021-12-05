@@ -26,7 +26,7 @@ public class MainWindow {
     private ListView<Item> itemsListView;
 
     @FXML
-    private Button FavoriteSellerButton;
+    private Button favoriteSellerButton;
 
     @FXML
     private Button addDisplayFilterButton;
@@ -41,7 +41,7 @@ public class MainWindow {
     private Button addDistanceFilterButton;
 
     @FXML
-    private ComboBox<?> CategoriesCombobox;
+    private ComboBox<?> categoriesCombobox;
 	
 	private DiscountFinder finder;
 
@@ -84,7 +84,7 @@ public class MainWindow {
     }
 
 	@FXML
-    void OnFavoriteSeller(ActionEvent event) {
+    void onFavoriteSeller(ActionEvent event) {
 
     }
 
