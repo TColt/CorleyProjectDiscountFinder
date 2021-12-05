@@ -1,11 +1,14 @@
 package edu.westga.cs3211.discountFinder.model;
 /**Pre-generated discount list class
+ * @author Team 1
  * @version CS 3211
  */
 import java.util.ArrayList;
 
-/**Creates the discount list
+/**
+ * Creates the discount list
  * 
+ * @author Team 1
  */
 
 public class CreateDiscountList {

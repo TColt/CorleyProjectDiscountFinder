@@ -1,7 +1,7 @@
 package edu.westga.cs3211.discountFinder.model;
 
 /**Discount Finder class
- * 
+ * @author Team 1
  */
 import java.util.ArrayList;
 
@@ -31,6 +31,7 @@ public class DiscountFinder {
     }
 
     /**
+     * Add item into the list
      * 
      * @param item the item in the list
      */

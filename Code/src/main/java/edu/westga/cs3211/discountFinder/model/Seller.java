@@ -1,6 +1,7 @@
 package edu.westga.cs3211.discountFinder.model;
 /**Seller class 
  * 
+ * @author Team 1
  * @version CS 3211
  */
 public class Seller {

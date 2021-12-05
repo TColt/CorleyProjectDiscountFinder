@@ -1,6 +1,6 @@
 package edu.westga.cs3211.discountFinder.model;
 /**Item class
- * 
+ * @author Team 1
  * @version CS 3211
  */
 public class Item {
@@ -60,12 +60,29 @@ public class Item {
         this.favorite = "*";
     }
     
-    /**deafult to string for the items
-     * 
+    /**default to string for the items
+     * @return string  Tostring
      */
 
     public String toString() {
         return this.itemName + " at " + this.seller.getSellerName() + " in " + this.category.name() + " "
                 + this.getFavorite();
+    }
+    /**
+     * Gets the item Category
+     * 
+     * @return category the item category
+     */
+    public Category getCategory() {
+        return this.category;
+    }
+
+    /**
+     * Gets the item's seller
+     * 
+     * @return seller the item seller
+     */
+    public Seller getSeller() {
+        return this.seller;
     }
 }
