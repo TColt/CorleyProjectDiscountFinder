@@ -2,8 +2,7 @@ package edu.westga.cs3211.discountFinder.model;
 
 import java.util.ArrayList;
 /**
-* YAGA
-sdadadsadas
+*
 */
 public class DiscountFinder {
    
