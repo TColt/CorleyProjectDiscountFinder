@@ -8,14 +8,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 
 public class MainWindow {
-    @FXML
-    private Button addFilterButton;
+	@FXML
+    private Button addItemFilterButton;
 
     @FXML
     private Button clearFiltersList;
@@ -25,12 +24,24 @@ public class MainWindow {
 
     @FXML
     private ListView<Item> itemsListView;
-	
-	@FXML
-    private SplitMenuButton filterChoices;
 
-	@FXML
-    private MenuButton filterChoices2;
+    @FXML
+    private Button FavoriteSellerButton;
+
+    @FXML
+    private Button addDisplayFilterButton;
+
+    @FXML
+    private TextField filterBySellerTextField;
+
+    @FXML
+    private TextField filterByDistanceTextField;
+
+    @FXML
+    private Button addDistanceFilterButton;
+
+    @FXML
+    private ComboBox<?> CategoriesCombobox;
 	
 	private DiscountFinder finder;
 
@@ -58,7 +69,7 @@ public class MainWindow {
 	}
 
 	@FXML
-    void handleAddButton(ActionEvent event) {
+    void handleFindItemButton(ActionEvent event) {
 		if (this.filterItemByTextField.getText().isEmpty()) {
 			this.initializeListView();
 		} else {
@@ -71,6 +82,23 @@ public class MainWindow {
     void handleClearButton(ActionEvent event) {
 		this.itemsListView.itemsProperty().setValue(new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.getItems())));
     }
+
+	@FXML
+    void OnFavoriteSeller(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleDisplaySellerButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleDistanceFilterButton(ActionEvent event) {
+		
+    }
+
+
 
 	@FXML
 	public void initialize() {
