@@ -6,6 +6,7 @@ public class Seller {
     private String sellerName;
 
 <span class="fc" id="L8">    public Seller(int distance, String sellerName) {</span>
+<<<<<<< HEAD
 <span class="fc" id="L9">        this.distance = distance;</span>
 <span class="fc" id="L10">        this.sellerName = sellerName;</span>
 <span class="fc" id="L11">    }</span>
@@ -22,6 +23,34 @@ public class Seller {
 <span class="nc" id="L22">        int result = 0;</span>
 <span class="nc" id="L23">        result = this.getDistance() - distance;</span>
 <span class="nc" id="L24">        return Math.abs(result);</span>
+=======
+<span class="fc bfc" id="L9" title="All 2 branches covered.">        if (distance &lt; 0) {</span>
+<span class="fc" id="L10">            throw new IllegalArgumentException(&quot;Distance can not be negative&quot;);</span>
+        }
+<span class="fc bfc" id="L12" title="All 2 branches covered.">        if (sellerName == null) {</span>
+<span class="fc" id="L13">            throw new IllegalArgumentException(&quot;Name can not be null&quot;);</span>
+        }
+<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        if (sellerName.isEmpty()) {</span>
+<span class="nc" id="L16">            throw new IllegalArgumentException(&quot;Name can not be empty&quot;);</span>
+        }
+
+<span class="fc" id="L19">        this.distance = distance;</span>
+<span class="fc" id="L20">        this.sellerName = sellerName;</span>
+<span class="fc" id="L21">    }</span>
+
+    public int getDistance() {
+<span class="fc" id="L24">        return this.distance;</span>
+    }
+
+    public String getSellerName() {
+<span class="fc" id="L28">        return this.sellerName;</span>
+    }
+
+    public int calculateDistance(int distance) {
+<span class="nc" id="L32">        int result = 0;</span>
+<span class="nc" id="L33">        result = this.getDistance() - distance;</span>
+<span class="nc" id="L34">        return Math.abs(result);</span>
+>>>>>>> ed6cb474180bc48c244e2e8c972ff815f64d6f03
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
