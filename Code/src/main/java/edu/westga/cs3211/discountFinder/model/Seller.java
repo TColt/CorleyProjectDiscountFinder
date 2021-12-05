@@ -12,7 +12,8 @@ public class Seller {
 
     
     /**Initializing the constructor
-     * 
+     * @param distance distance from user
+     * @param sellerName seller's name
      */
     public Seller(int distance, String sellerName) {
         if (sellerName == null) {
