@@ -1,6 +1,12 @@
 package edu.westga.cs3211.discountFinder.model;
-
+/**Pre-generated discount list class
+ * @version CS 3211
+ */
 import java.util.ArrayList;
+
+/**Creates the discount list
+ * 
+ */
 
 public class CreateDiscountList {
     private ArrayList<Item> itemList;
@@ -30,7 +36,10 @@ public class CreateDiscountList {
         this.itemList.add(item7);
         this.itemList.add(item8);
     }
-
+    /**Gets the list that was pre-generated in the constructor.
+     * 
+     * @return the list of items pre-generated
+     */
     public ArrayList<Item> returnItemList() {
         return this.itemList;
     }

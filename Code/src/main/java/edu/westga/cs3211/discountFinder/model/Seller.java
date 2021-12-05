@@ -1,10 +1,13 @@
 package edu.westga.cs3211.discountFinder.model;
-
+/**Seller class 
+ * 
+ * @version CS 3211
+ */
 public class Seller {
 
     private int distance;
     private String sellerName;
-
+   
     public Seller(int distance, String sellerName) {
         if (distance < 0) {
             throw new IllegalArgumentException("Distance can not be negative");
@@ -19,7 +22,7 @@ public class Seller {
         this.distance = distance;
         this.sellerName = sellerName;
     }
-
+  
     public int getDistance() {
         return this.distance;
     }
