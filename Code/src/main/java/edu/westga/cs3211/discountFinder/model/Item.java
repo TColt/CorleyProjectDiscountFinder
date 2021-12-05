@@ -5,7 +5,6 @@ package edu.westga.cs3211.discountFinder.model;
  */
 public class Item {
 
-    private String favorite;
     private Seller seller;
     private String itemName;
     private Category category;
@@ -28,7 +27,6 @@ public class Item {
         }
 
         this.seller = seller;
-        this.favorite = "";
         this.itemName = name;
         this.category = category;
 
@@ -43,30 +41,13 @@ public class Item {
     public String getName() {
         return this.itemName;
     }
-
-    /**get if the item is favorited
-     * 
-     * @return the favorite astreik 
-     */
-    public String getFavorite() {
-        return this.favorite;
-    }
-
-    /**sets the favorite
-     * 
-     */
-
-    public void setFavorite() {
-        this.favorite = "*";
-    }
     
     /**default to string for the items
      * @return string  Tostring
      */
 
     public String toString() {
-        return this.itemName + " at " + this.seller.getSellerName() + " in " + this.category.name() + " "
-                + this.getFavorite();
+        return this.itemName + " at " + this.seller.getSellerName() + " in " + this.category.name() + " " + this.seller.getFavorite();
     }
     /**
      * Gets the item Category

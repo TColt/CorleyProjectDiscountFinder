@@ -82,7 +82,7 @@ public class MainWindow {
     void onFavoriteSeller(ActionEvent event) {
         if (this.itemsListView.getSelectionModel().getSelectedItem() != null) {
             
-            this.itemsListView.getSelectionModel().getSelectedItem().setFavorite();
+            this.itemsListView.getSelectionModel().getSelectedItem().getSeller().setFavorite();
             this.initialize();
         }
         

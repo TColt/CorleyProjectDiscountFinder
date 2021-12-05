@@ -14,6 +14,9 @@ import java.util.ArrayList;
 public class CreateDiscountList {
     private ArrayList<Item> itemList;
 
+    /**
+     * creates a default list
+     */
     public CreateDiscountList() {
         this.itemList = new ArrayList<Item>();
         Seller dell = new Seller(25, "Dell");

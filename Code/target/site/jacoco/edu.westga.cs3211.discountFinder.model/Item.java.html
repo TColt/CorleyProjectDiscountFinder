@@ -5,7 +5,6 @@
  */
 public class Item {
 
-    private String favorite;
     private Seller seller;
     private String itemName;
     private Category category;
@@ -18,21 +17,20 @@ public class Item {
      * @param category the category of the item
      */
 
-<span class="fc" id="L21">    public Item(String name, Seller seller, Category category) {</span>
-<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (name == null) {</span>
-<span class="fc" id="L23">            throw new IllegalArgumentException(&quot;name cannot be null.&quot;);</span>
+<span class="fc" id="L20">    public Item(String name, Seller seller, Category category) {</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        if (name == null) {</span>
+<span class="fc" id="L22">            throw new IllegalArgumentException(&quot;name cannot be null.&quot;);</span>
         }
 
-<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (name.isEmpty()) {</span>
-<span class="fc" id="L27">            throw new IllegalArgumentException(&quot;name cannot be empty.&quot;);</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        if (name.isEmpty()) {</span>
+<span class="fc" id="L26">            throw new IllegalArgumentException(&quot;name cannot be empty.&quot;);</span>
         }
 
-<span class="fc" id="L30">        this.seller = seller;</span>
-<span class="fc" id="L31">        this.favorite = &quot;&quot;;</span>
-<span class="fc" id="L32">        this.itemName = name;</span>
-<span class="fc" id="L33">        this.category = category;</span>
+<span class="fc" id="L29">        this.seller = seller;</span>
+<span class="fc" id="L30">        this.itemName = name;</span>
+<span class="fc" id="L31">        this.category = category;</span>
 
-<span class="fc" id="L35">    }</span>
+<span class="fc" id="L33">    }</span>
 
     /**
      * get the name of the item
@@ -41,32 +39,15 @@ public class Item {
      */
 
     public String getName() {
-<span class="fc" id="L44">        return this.itemName;</span>
+<span class="fc" id="L42">        return this.itemName;</span>
     }
-
-    /**get if the item is favorited
-     * 
-     * @return the favorite astreik 
-     */
-    public String getFavorite() {
-<span class="fc" id="L52">        return this.favorite;</span>
-    }
-
-    /**sets the favorite
-     * 
-     */
-
-    public void setFavorite() {
-<span class="fc" id="L60">        this.favorite = &quot;*&quot;;</span>
-<span class="fc" id="L61">    }</span>
     
     /**default to string for the items
      * @return string  Tostring
      */
 
     public String toString() {
-<span class="fc" id="L68">        return this.itemName + &quot; at &quot; + this.seller.getSellerName() + &quot; in &quot; + this.category.name() + &quot; &quot;</span>
-<span class="fc" id="L69">                + this.getFavorite();</span>
+<span class="fc" id="L50">        return this.itemName + &quot; at &quot; + this.seller.getSellerName() + &quot; in &quot; + this.category.name() + &quot; &quot; + this.seller.getFavorite();</span>
     }
     /**
      * Gets the item Category
@@ -74,7 +55,7 @@ public class Item {
      * @return category the item category
      */
     public Category getCategory() {
-<span class="fc" id="L77">        return this.category;</span>
+<span class="fc" id="L58">        return this.category;</span>
     }
 
     /**
@@ -83,7 +64,7 @@ public class Item {
      * @return seller the item seller
      */
     public Seller getSeller() {
-<span class="fc" id="L86">        return this.seller;</span>
+<span class="fc" id="L67">        return this.seller;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
