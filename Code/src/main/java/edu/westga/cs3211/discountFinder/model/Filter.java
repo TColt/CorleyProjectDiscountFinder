@@ -62,6 +62,9 @@ public class Filter {
                     break;
             
                 default:
+                    if (item.getSeller().getDistance() > 30) {
+                        filteredList.add(item);
+                    }
                     break;
             }
         }

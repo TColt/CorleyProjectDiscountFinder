@@ -4,5 +4,5 @@ package edu.westga.cs3211.discountFinder.model;
  * @version CS 3211
  */
 public enum DistanceEnum {
-    Ten, Twenty, Thirty
+    Ten, Twenty, Thirty, OverThirty
 }

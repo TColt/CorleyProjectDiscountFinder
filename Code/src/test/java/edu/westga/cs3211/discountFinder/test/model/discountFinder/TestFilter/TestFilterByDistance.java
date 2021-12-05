@@ -50,4 +50,14 @@ public class TestFilterByDistance {
         assertEquals(filtered.get(2), finder.getItem(4));
         assertEquals(filtered.get(3), finder.getItem(5));
     }
+
+    @Test
+    void testOverDistance() {
+        DiscountFinder finder = new DiscountFinder();
+
+        ArrayList<Item> filtered = Filter.filterByDistance(finder.getItems(),DistanceEnum.OverThirty);
+
+
+        assertEquals(filtered.size(), 4);
+    }
 }

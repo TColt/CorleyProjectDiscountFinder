@@ -42,7 +42,7 @@ import java.util.ArrayList;
 <span class="fc" id="L42">        ArrayList&lt;Item&gt; filteredList = new ArrayList&lt;&gt;();</span>
 <span class="fc bfc" id="L43" title="All 2 branches covered.">        for (Item item : list) {</span>
 
-<span class="pc bpc" id="L45" title="1 of 4 branches missed.">            switch (distanceto) {</span>
+<span class="fc bfc" id="L45" title="All 4 branches covered.">            switch (distanceto) {</span>
                 case Ten:
 <span class="fc bfc" id="L47" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &lt;= 10) {</span>
 <span class="fc" id="L48">                        filteredList.add(item);</span>
@@ -62,10 +62,13 @@ import java.util.ArrayList;
 <span class="fc" id="L62">                    break;</span>
             
                 default:
+<span class="fc bfc" id="L65" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &gt; 30) {</span>
+<span class="fc" id="L66">                        filteredList.add(item);</span>
+                    }
                     break;
             }
         }
-<span class="fc" id="L68">        return filteredList;</span>
+<span class="fc" id="L71">        return filteredList;</span>
     }
 
 

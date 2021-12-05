@@ -40,13 +40,4 @@ public class DiscountFinder {
         return this.items.get(index);
     }
 
-    /**
-     * get the size of the list
-     * 
-     * @return the size of the list
-     */
-    public int size() {
-        return this.items.size();
-    }
-
 }

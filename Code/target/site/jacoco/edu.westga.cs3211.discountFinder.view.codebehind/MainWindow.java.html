@@ -80,13 +80,13 @@ import javafx.scene.control.TextField;
 
 	@FXML
     void onFavoriteSeller(ActionEvent event) {
-        if (this.itemsListView.getSelectionModel().getSelectedItem() != null) {
+<span class="nc bnc" id="L83" title="All 2 branches missed.">        if (this.itemsListView.getSelectionModel().getSelectedItem() != null) {</span>
             
-<span class="nc" id="L85">            this.itemsListView.getSelectionModel().getSelectedItem().setFavorite();</span>
-            this.initialize();
+<span class="nc" id="L85">            this.itemsListView.getSelectionModel().getSelectedItem().getSeller().setFavorite();</span>
+<span class="nc" id="L86">            this.initializeListView();</span>
         }
         
-    }
+<span class="nc" id="L89">    }</span>
 
     @FXML
     void handleDisplaySellerButton(ActionEvent event) {
@@ -110,40 +110,52 @@ import javafx.scene.control.TextField;
             }
 <span class="nc" id="L111">        });</span>
 <span class="nc" id="L112">    }</span>
+/*
+*/
+    private void setupListenerForListSelect() {
+<span class="nc" id="L116">        this.itemsListView.getSelectionModel().selectedItemProperty().addListener((observable, oldSelect, newSelect) -&gt; {</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">            if (newSelect != null) {</span>
+<span class="nc" id="L118">                this.filterItemByTextField.setText(newSelect.getName());</span>
+<span class="nc" id="L119">                this.filterBySellerTextField.setText(newSelect.getSeller().getSellerName());</span>
+            }
+<span class="nc" id="L121">        });</span>
+<span class="nc" id="L122">    }</span>
 
 	private void populateComboBox() {
-<span class="nc bnc" id="L115" title="All 2 branches missed.">        for (Category category : Category.values()) {</span>
-<span class="nc" id="L116">            this.categoriesCombobox.getItems().add(category);</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">        for (Category category : Category.values()) {</span>
+<span class="nc" id="L126">            this.categoriesCombobox.getItems().add(category);</span>
         }
 
-<span class="nc bnc" id="L119" title="All 2 branches missed.">        for (DistanceEnum distanceEnum : DistanceEnum.values()) {</span>
-<span class="nc" id="L120">            this.distanceFromComboBox.getItems().add(distanceEnum);</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">        for (DistanceEnum distanceEnum : DistanceEnum.values()) {</span>
+<span class="nc" id="L130">            this.distanceFromComboBox.getItems().add(distanceEnum);</span>
         }
-<span class="nc" id="L122">	}</span>
+<span class="nc" id="L132">	}</span>
 
     private void setupListenerForCategoriesCombobox() {
 
-<span class="nc" id="L126">        this.categoriesCombobox.getSelectionModel().selectedItemProperty().addListener((observable, oldCategory, newCategory) -&gt; {</span>
-<span class="nc bnc" id="L127" title="All 2 branches missed.">            if (newCategory != null) {</span>
-<span class="nc" id="L128">                ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(Filter.filterByCategory(this.finder.getItems(), newCategory)));</span>
-<span class="nc" id="L129">                this.itemsListView.itemsProperty().setValue(filtered);</span>
-<span class="nc bnc" id="L130" title="All 2 branches missed.">            } else if (oldCategory == null) {</span>
-<span class="nc" id="L131">                this.initializeListView();</span>
+<span class="nc" id="L136">        this.categoriesCombobox.getSelectionModel().selectedItemProperty().addListener((observable, oldCategory, newCategory) -&gt; {</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">            if (newCategory != null) {</span>
+<span class="nc" id="L138">                ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(Filter.filterByCategory(this.finder.getItems(), newCategory)));</span>
+<span class="nc" id="L139">                this.itemsListView.itemsProperty().setValue(filtered);</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">            } else if (oldCategory == null) {</span>
+<span class="nc" id="L141">                this.initializeListView();</span>
             }
-<span class="nc" id="L133">        });</span>
-<span class="nc" id="L134">    }</span>
+<span class="nc" id="L143">        });</span>
+<span class="nc" id="L144">    }</span>
 
     /**
      * Initializes Webpage
      */
     @FXML
 	public void initialize() {
-<span class="nc" id="L141">		this.finder = new DiscountFinder();</span>
-<span class="nc" id="L142">		this.initializeListView();</span>
-<span class="nc" id="L143">		this.populateComboBox();</span>
-<span class="nc" id="L144">        this.setupListenerForCategoriesCombobox();</span>
-<span class="nc" id="L145">        this.setupListenerForDistanceCombobox();</span>
-<span class="nc" id="L146">	}</span>
+<span class="nc" id="L151">		this.finder = new DiscountFinder();</span>
+<span class="nc" id="L152">		this.initializeListView();</span>
+<span class="nc" id="L153">		this.populateComboBox();</span>
+<span class="nc" id="L154">        this.setupListenerForCategoriesCombobox();</span>
+<span class="nc" id="L155">        this.setupListenerForDistanceCombobox();</span>
+
+<span class="nc" id="L157">        this.setupListenerForListSelect();</span>
+<span class="nc" id="L158">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
