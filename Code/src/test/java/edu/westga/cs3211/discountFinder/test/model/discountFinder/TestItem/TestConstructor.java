@@ -1,45 +1,76 @@
-// package edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem;
+package edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem;
 
-// import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;
 
-// import edu.westga.cs3211.discountFinder.model.Item;
+import edu.westga.cs3211.discountFinder.model.Category;
+import edu.westga.cs3211.discountFinder.model.Item;
+import edu.westga.cs3211.discountFinder.model.Seller;
 
-// import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 
-// class TestConstructor{
-//     @Test
-//     void testValidConstruction() {
-//         Item item = new Item("name", "store", "brand", 60, true);
+class TestConstructor{
+    @Test
+    void testValidConstruction() {
+        Seller seller = new Seller(50, "seller");
+        Item item = new Item("name", seller, Category.APPLIANCES);
 
-//         assertAll(
-//             () -> assertEquals("name", item.getName()),
-//             () -> assertEquals("store", item.getStore()),
-//             () -> assertEquals("brand", item.getBrand()),
-//             () -> assertEquals(60, item.getPrice()),
-//             () -> assertEquals(true, item.isDiscounted())
-//         );
-//     }
+        assertAll(
+            () -> assertEquals("name", item.getName()),
+            () -> assertEquals("", item.getFavorite())
+        );
+    }
 
-//     @Test
-//     void testNullName() {
-//         assertThrows(IllegalArgumentException.class, () -> new Item(null, "store", "brand", 60, true));
-//     }
+    @Test
+    void testNullName() {
+        Seller seller = new Seller(50, "seller");
 
-//     @Test
-//     void testNullStore() {
-//         assertThrows(IllegalArgumentException.class, () -> new Item("name", null, "brand", 60, true));
-//     }
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Item(null, seller, Category.APPLIANCES);
+        });
+    }
 
-//     @Test
-//     void testNullBrand() {
-//         assertThrows(IllegalArgumentException.class, () -> new Item("name", "store", null, 60, true));
-//     }
+    @Test
+    void testEmptyName() {
+        Seller seller = new Seller(50, "seller");
 
-//     @Test
-//     void testPastZeroPrice() {
-//         assertThrows(IllegalArgumentException.class, () -> new Item("name", "store", "brand", -2, true));
-//     }
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Item("", seller, Category.APPLIANCES);
+        });
+    }
+
+    @Test
+    void testSetFavoriteIsFavorited() {
+        Seller seller = new Seller(50, "seller");
+        Item item = new Item("name", seller, Category.CLOTHING);
+
+        item.setFavorite();
+
+        assertEquals("*", item.getFavorite());
+    }
     
-// }
+    @Test
+    void testSetFavoriteIsNotFavorited() {
+        Seller seller = new Seller(50, "seller");
+        Item item = new Item("name", seller, Category.ELECTRONICS);
+
+        assertEquals("", item.getFavorite());
+    }
+
+    @Test
+    void testToStringNoFavorite() {
+        Seller seller = new Seller(50, "seller");
+        Item item = new Item("name", seller, Category.FOOD);
+
+        assertEquals("name at seller in FOOD ", item.toString());
+    }
+
+    @Test
+    void testToStringFavorite() {
+        Seller seller = new Seller(50, "seller");
+        Item item = new Item("name", seller, Category.OTHER);
+
+        assertEquals("name at seller in OTHER *", item.toString());
+    }
+}
