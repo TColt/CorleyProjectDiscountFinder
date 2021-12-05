@@ -61,7 +61,6 @@ import javafx.scene.control.TextField;
 
 	@FXML
     void handleFindItemButton(ActionEvent event) {
-<<<<<<< HEAD
 		// if (this.filterItemByTextField.getText().isEmpty()) {
 		// 	this.initializeListView();
 		// } else {
@@ -69,15 +68,6 @@ import javafx.scene.control.TextField;
 		// 	this.itemsListView.itemsProperty().setValue(filtered);
 		// }
 <span class="nc" id="L70">    }</span>
-=======
-		if (this.filterItemByTextField.getText().isEmpty()) {
-			this.initializeListView();
-		} else {
-<span class="nc" id="L67">			ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.finder.findDiscountsForItem(this.filterItemByTextField.getText())));</span>
-			this.itemsListView.itemsProperty().setValue(filtered);
-		}
-    }
->>>>>>> ed6cb474180bc48c244e2e8c972ff815f64d6f03
 
 	@FXML
     void handleClearButton(ActionEvent event) {

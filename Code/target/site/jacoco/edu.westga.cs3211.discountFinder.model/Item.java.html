@@ -15,7 +15,6 @@ public class Item {
      * @param category
      */
 
-<<<<<<< HEAD
 <span class="fc" id="L18">    public Item(String name, Seller seller, Category category) {</span>
 <span class="fc bfc" id="L19" title="All 2 branches covered.">        if (name == null) {</span>
 <span class="fc" id="L20">            throw new IllegalArgumentException(&quot;name cannot be null.&quot;);</span>
@@ -47,39 +46,6 @@ public class Item {
     public String toString() {
 <span class="fc" id="L47">        return this.itemName + &quot; at &quot; + this.seller.getSellerName() + &quot; in &quot; + this.category.name() + &quot; &quot;</span>
 <span class="fc" id="L48">                + this.getFavorite();</span>
-=======
-<span class="nc" id="L18">    public Item(String name, Seller seller, Category category) {</span>
-<span class="nc bnc" id="L19" title="All 2 branches missed.">        if (name == null) {</span>
-<span class="nc" id="L20">            throw new IllegalArgumentException(&quot;name cannot be null.&quot;);</span>
-        }
-
-        // if (this.favorite == null) {
-        //     throw new IllegalArgumentException(&quot;favorite cannot be null.&quot;);
-        // }
-
-<span class="nc" id="L27">        this.seller = seller;</span>
-<span class="nc" id="L28">        this.favorite = &quot;&quot;;</span>
-<span class="nc" id="L29">        this.itemName = name;</span>
-<span class="nc" id="L30">        this.category = category;</span>
-
-<span class="nc" id="L32">    }</span>
-
-    public String getName() {
-<span class="nc" id="L35">        return this.itemName;</span>
-    }
-
-    public String getFavorite() {
-<span class="nc" id="L39">        return this.favorite;</span>
-    }
-
-    public void setFavorite() {
-<span class="nc" id="L43">        this.favorite = &quot;*&quot;;</span>
-<span class="nc" id="L44">    }</span>
-
-    public String toString() {
-<span class="nc" id="L47">        return this.itemName + &quot; at &quot; + this.seller.getSellerName() + &quot; in &quot; + this.category.name() + &quot; &quot;</span>
-                + this.favorite;
->>>>>>> ed6cb474180bc48c244e2e8c972ff815f64d6f03
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
