@@ -70,6 +70,7 @@ class TestConstructor{
     void testToStringFavorite() {
         Seller seller = new Seller(50, "seller");
         Item item = new Item("name", seller, Category.OTHER);
+        item.setFavorite();
 
         assertEquals("name at seller in OTHER *", item.toString());
     }

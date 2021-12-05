@@ -61,12 +61,12 @@ public class MainWindow {
 
 	@FXML
     void handleFindItemButton(ActionEvent event) {
-		if (this.filterItemByTextField.getText().isEmpty()) {
-			this.initializeListView();
-		} else {
-			ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.findDiscountsForItem(this.filterItemByTextField.getText())));
-			this.itemsListView.itemsProperty().setValue(filtered);
-		}
+		// if (this.filterItemByTextField.getText().isEmpty()) {
+		// 	this.initializeListView();
+		// } else {
+		// 	ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.findDiscountsForItem(this.filterItemByTextField.getText())));
+		// 	this.itemsListView.itemsProperty().setValue(filtered);
+		// }
     }
 
 	@FXML
