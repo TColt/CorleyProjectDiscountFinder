@@ -83,7 +83,7 @@ public class MainWindow {
         if (this.itemsListView.getSelectionModel().getSelectedItem() != null) {
             
             this.itemsListView.getSelectionModel().getSelectedItem().getSeller().setFavorite();
-            this.initialize();
+            this.initializeListView();
         }
         
     }
@@ -107,6 +107,16 @@ public class MainWindow {
                 this.itemsListView.itemsProperty().setValue(filtered);
             } else if (oldDistance == null) {
                 this.initializeListView();
+            }
+        });
+    }
+/*
+*/
+    private void setupListenerForListSelect() {
+        this.itemsListView.getSelectionModel().selectedItemProperty().addListener((observable, oldSelect, newSelect) -> {
+            if (newSelect != null) {
+                this.filterItemByTextField.setText(newSelect.getName());
+                this.filterBySellerTextField.setText(newSelect.getSeller().getSellerName());
             }
         });
     }
@@ -143,6 +153,8 @@ public class MainWindow {
 		this.populateComboBox();
         this.setupListenerForCategoriesCombobox();
         this.setupListenerForDistanceCombobox();
+
+        this.setupListenerForListSelect();
 	}
 
 }
