@@ -95,9 +95,6 @@ public class MainWindow {
 
     @FXML
     void handleDistanceFilterButton(ActionEvent event) {
-		if(!this.filterItemByTextField.getText().isEmpty()){
-			this.
-		}
 		
     }
 
