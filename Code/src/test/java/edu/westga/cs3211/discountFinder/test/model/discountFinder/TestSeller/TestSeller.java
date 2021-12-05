@@ -29,4 +29,8 @@ class TestSeller {
         assertThrows(IllegalArgumentException.class, () -> new Seller(-100, "Nike"));
     }
 
+    @Test
+    void testEmptyName() {
+        assertThrows(IllegalArgumentException.class, () -> new Seller(-100, ""));
+    }
 }
