@@ -8,23 +8,27 @@ public class Seller {
 
     private int distance;
     private String sellerName;
+    private String favorite;
+
     
     /**Initializing the constructor
      * 
      */
     public Seller(int distance, String sellerName) {
-        if (distance < 0) {
-            throw new IllegalArgumentException("Distance can not be negative");
-        }
         if (sellerName == null) {
             throw new IllegalArgumentException("Name can not be null");
         }
         if (sellerName.isEmpty()) {
             throw new IllegalArgumentException("Name can not be empty");
         }
+        if (distance < 0) {
+            throw new IllegalArgumentException("Distance can not be negative");
+        }
+
 
         this.distance = distance;
         this.sellerName = sellerName;
+        this.favorite = "";
     }
     /**Get the distance 
      * 
@@ -43,4 +47,11 @@ public class Seller {
         return this.sellerName;
     }
 
+    public void setFavorite() {
+        this.favorite = "*";
+    }
+
+    public String getFavorite() {
+        return this.favorite;
+    }
 }

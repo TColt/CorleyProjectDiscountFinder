@@ -8,34 +8,44 @@ public class Seller {
 
     private int distance;
     private String sellerName;
+    private String favorite;
    
-<span class="fc" id="L12">    public Seller(int distance, String sellerName) {</span>
-<span class="fc bfc" id="L13" title="All 2 branches covered.">        if (distance &lt; 0) {</span>
-<span class="fc" id="L14">            throw new IllegalArgumentException(&quot;Distance can not be negative&quot;);</span>
+<span class="fc" id="L13">    public Seller(int distance, String sellerName) {</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        if (distance &lt; 0) {</span>
+<span class="fc" id="L15">            throw new IllegalArgumentException(&quot;Distance can not be negative&quot;);</span>
         }
-<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (sellerName == null) {</span>
-<span class="fc" id="L17">            throw new IllegalArgumentException(&quot;Name can not be null&quot;);</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (sellerName == null) {</span>
+<span class="fc" id="L18">            throw new IllegalArgumentException(&quot;Name can not be null&quot;);</span>
         }
-<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        if (sellerName.isEmpty()) {</span>
-<span class="nc" id="L20">            throw new IllegalArgumentException(&quot;Name can not be empty&quot;);</span>
+<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        if (sellerName.isEmpty()) {</span>
+<span class="nc" id="L21">            throw new IllegalArgumentException(&quot;Name can not be empty&quot;);</span>
         }
 
-<span class="fc" id="L23">        this.distance = distance;</span>
-<span class="fc" id="L24">        this.sellerName = sellerName;</span>
-<span class="fc" id="L25">    }</span>
+<span class="fc" id="L24">        this.distance = distance;</span>
+<span class="fc" id="L25">        this.sellerName = sellerName;</span>
+<span class="fc" id="L26">        this.favorite = &quot;&quot;;</span>
+<span class="fc" id="L27">    }</span>
   
     public int getDistance() {
-<span class="fc" id="L28">        return this.distance;</span>
+<span class="fc" id="L30">        return this.distance;</span>
     }
 
     public String getSellerName() {
-<span class="fc" id="L32">        return this.sellerName;</span>
+<span class="fc" id="L34">        return this.sellerName;</span>
     }
 
     public int calculateDistance(int distance) {
-<span class="nc" id="L36">        int result = 0;</span>
-<span class="nc" id="L37">        result = this.getDistance() - distance;</span>
-<span class="nc" id="L38">        return Math.abs(result);</span>
+<span class="nc" id="L38">        int result = 0;</span>
+<span class="nc" id="L39">        result = this.getDistance() - distance;</span>
+<span class="nc" id="L40">        return Math.abs(result);</span>
+    }
+
+    public void setFavorite() {
+<span class="fc" id="L44">        this.favorite = &quot;*&quot;;</span>
+<span class="fc" id="L45">    }</span>
+
+    public String getFavorite() {
+<span class="fc" id="L48">        return this.favorite;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
