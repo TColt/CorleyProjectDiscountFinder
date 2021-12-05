@@ -8,7 +8,10 @@ public class Seller {
 
     private int distance;
     private String sellerName;
-   
+    
+    /**Initializing the constructor
+     * 
+     */
     public Seller(int distance, String sellerName) {
         if (distance < 0) {
             throw new IllegalArgumentException("Distance can not be negative");
@@ -23,18 +26,21 @@ public class Seller {
         this.distance = distance;
         this.sellerName = sellerName;
     }
+    /**Get the distance 
+     * 
+     * @return the distance
+     */
   
     public int getDistance() {
         return this.distance;
     }
+    /**Get the seller name
+     * 
+     * @return the seller name
+     */
 
     public String getSellerName() {
         return this.sellerName;
     }
 
-    public int calculateDistance(int distance) {
-        int result = 0;
-        result = this.getDistance() - distance;
-        return Math.abs(result);
-    }
 }
