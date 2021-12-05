@@ -1,3 +1,6 @@
-#Thu Nov 18 19:59:46 EST 2021
-configuration*?=1A5CC06495E08D69F6BFDC4912E8C2EEFC89945E
+#Sun Dec 05 13:44:02 EST 2021
+=\=\=\=\=\=\=
+configuration*?=8FC03F5FD2F3FC39270D1BDE6CAA2806AF19A07D
 module-resource*?\:https\://www.westga.edu/~dyoder/Checkstyle/suppressions.xml=564EFCB2A309CA8A142FA6873BF5B174CCA42FDC
+>>>>>>>=ed6cb474180bc48c244e2e8c972ff815f64d6f03
+<<<<<<<=HEAD
