@@ -20,9 +20,9 @@ public class Item {
             throw new IllegalArgumentException("name cannot be null.");
         }
 
-        // if (this.favorite == null) {
-        //     throw new IllegalArgumentException("favorite cannot be null.");
-        // }
+        if (name.isEmpty()) {
+            throw new IllegalArgumentException("name cannot be empty.");
+        }
 
         this.seller = seller;
         this.favorite = "";
