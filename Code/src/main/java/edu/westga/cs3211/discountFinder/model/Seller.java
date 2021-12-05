@@ -9,7 +9,11 @@ public class Seller {
     private int distance;
     private String sellerName;
     private String favorite;
-   
+
+    
+    /**Initializing the constructor
+     * 
+     */
     public Seller(int distance, String sellerName) {
         if (sellerName == null) {
             throw new IllegalArgumentException("Name can not be null");
@@ -26,10 +30,18 @@ public class Seller {
         this.sellerName = sellerName;
         this.favorite = "";
     }
+    /**Get the distance 
+     * 
+     * @return the distance
+     */
   
     public int getDistance() {
         return this.distance;
     }
+    /**Get the seller name
+     * 
+     * @return the seller name
+     */
 
     public String getSellerName() {
         return this.sellerName;
