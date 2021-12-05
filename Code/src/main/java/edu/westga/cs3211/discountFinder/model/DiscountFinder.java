@@ -2,7 +2,6 @@ package edu.westga.cs3211.discountFinder.model;
 
 import java.util.ArrayList;
 
-
 public class DiscountFinder {
    
     private ArrayList<Item> items;
