@@ -1,4 +1,4 @@
-Use-Case 5: Limit discounts based on category
+Use-Case 5: Limit discounts based on distance
 Actor: Shopper
 Shopper wants to limit discounts based on distance to seller
 Flow:
