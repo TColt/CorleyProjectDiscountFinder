@@ -45,7 +45,11 @@ public class MainWindow {
     private Button addDistanceFilterButton;
 
     @FXML
+<<<<<<< HEAD
     private ComboBox<Category> categoriesCombobox;
+=======
+    private ComboBox<?> categoriesCombobox;
+>>>>>>> df205363058fe1e354241bfe91fbdef270f41695
 	
 	private DiscountFinder finder;
 

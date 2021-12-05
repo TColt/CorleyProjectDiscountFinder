@@ -2,12 +2,11 @@ package edu.westga.cs3211.discountFinder.model;
 
 import java.util.ArrayList;
 
-public  class CreateDiscountList {
-    private ArrayList<Item> itemList = new ArrayList<Item>();
+public class CreateDiscountList {
+    private ArrayList<Item> itemList;
 
-    public CreateDiscountList(){
-        
-
+    public CreateDiscountList() {
+        this.itemList = new ArrayList<Item>();
         Seller dell = new Seller(25, "Dell");
         Seller nike = new Seller(50, "Nike");
         Seller amazon = new Seller(100, "Amazon");
@@ -22,17 +21,17 @@ public  class CreateDiscountList {
         Item item6 = new Item("Cheezits", walmart, Category.FOOD);
         Item item7 = new Item("Delta 8 Pen", amazon, Category.ELECTRONICS);
         Item item8 = new Item("Bleep Bleep Bleep", adamandeve, Category.APPLIANCES);
-        itemList.add(item1);
-        itemList.add(item2);
-        itemList.add(item3);
-        itemList.add(item4);
-        itemList.add(item5);
-        itemList.add(item6);
-        itemList.add(item7);
-        itemList.add(item8);
+        this.itemList.add(item1);
+        this.itemList.add(item2);
+        this.itemList.add(item3);
+        this.itemList.add(item4);
+        this.itemList.add(item5);
+        this.itemList.add(item6);
+        this.itemList.add(item7);
+        this.itemList.add(item8);
     }
 
-    public ArrayList<Item> returnItemList(){
+    public ArrayList<Item> returnItemList() {
         return this.itemList;
     }
 }
