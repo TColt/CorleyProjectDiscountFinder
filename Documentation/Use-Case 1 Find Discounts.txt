@@ -3,6 +3,6 @@ Actor: Shopper
 Shopper wants to find discounts
 Flow:
 1.	Shopper starts system
-2.	System displays discounts
+2.	System displays all discounts
 Alternatives:
 	2a. If no discounts, system displays there are no discounts

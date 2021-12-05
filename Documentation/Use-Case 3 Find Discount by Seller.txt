@@ -1,4 +1,4 @@
-Use-Case 3: Find Discount
+Use-Case 3: Find Discount by Seller
 Actor: Shopper
 Shopper wants to limit discounts based on seller
 Flow:
