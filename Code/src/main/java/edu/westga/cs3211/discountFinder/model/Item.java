@@ -40,6 +40,6 @@ public class Item {
 
   
     public String toString() {
-        return this.itemName + " at " + this.seller.getSellerName()+" in "+this.category.name()+ " "+this.favorite;
+        return this.itemName + " at " + this.seller.getSellerName()+" in " +this.category.name()+ " "+this.favorite;
     }
 }

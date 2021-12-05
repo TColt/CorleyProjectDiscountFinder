@@ -1,5 +1,6 @@
 package edu.westga.cs3211.discountFinder.view.codebehind;
 
+import edu.westga.cs3211.discountFinder.model.Category;
 import edu.westga.cs3211.discountFinder.model.DiscountFinder;
 import edu.westga.cs3211.discountFinder.model.Item;
 import javafx.beans.property.SimpleListProperty;
@@ -12,6 +13,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+/*
+
+*/
 public class MainWindow {
 	@FXML
     private Button addItemFilterButton;
@@ -26,7 +30,7 @@ public class MainWindow {
     private ListView<Item> itemsListView;
 
     @FXML
-    private Button FavoriteSellerButton;
+    private Button favoriteSellerButton;
 
     @FXML
     private Button addDisplayFilterButton;
@@ -41,7 +45,7 @@ public class MainWindow {
     private Button addDistanceFilterButton;
 
     @FXML
-    private ComboBox<?> CategoriesCombobox;
+    private ComboBox<Category> categoriesCombobox;
 	
 	private DiscountFinder finder;
 
@@ -53,19 +57,6 @@ public class MainWindow {
 	}
 
 	private void populateList() {
-		Item item1 = new Item("Fruit", "Publix", "Biolife", 5, true);
-        Item item2 = new Item("Cereal", "TJ Maxx", "Generic", 25, false);
-        Item item3 = new Item("Beans", "Wawa", "Premium", 6, true);
-		Item item4 = new Item("Water", "Kroger", "Aquafina", 3, false);
-        Item item5 = new Item("Bucket", "Walmart", "WholeBulk", 2, true);
-        Item item6 = new Item("Mop", "Dicks", "John Deer", 7, true);
-
-		this.finder.addItem(item1);
-		this.finder.addItem(item2);
-		this.finder.addItem(item3);
-		this.finder.addItem(item4);
-		this.finder.addItem(item5);
-		this.finder.addItem(item6);
 	}
 
 	@FXML
@@ -84,7 +75,7 @@ public class MainWindow {
     }
 
 	@FXML
-    void OnFavoriteSeller(ActionEvent event) {
+    void onFavoriteSeller(ActionEvent event) {
 
     }
 
@@ -98,12 +89,23 @@ public class MainWindow {
 		
     }
 
+	private void populateComboBox() {
+		this.categoriesCombobox.getItems().add(Category.APPLIANCES);
+		this.categoriesCombobox.getItems().add(Category.CLOTHING);
+		this.categoriesCombobox.getItems().add(Category.ELECTRONICS);
+		this.categoriesCombobox.getItems().add(Category.FOOD);
+		this.categoriesCombobox.getItems().add(Category.OTHER);
+	}
 
 
-	@FXML
+	
+  /*
+  */
+  @FXML
 	public void initialize() {
 		this.finder = new DiscountFinder();
 		this.populateList();
 		this.initializeListView();
+		this.populateComboBox();
 	}
 }
