@@ -8,6 +8,7 @@ public class DiscountFinder {
     private CreateDiscountList generatedList;
 
     public DiscountFinder() {
+        this.generatedList = new CreateDiscountList();
         this.items = this.generatedList.returnItemList();
     }
 
