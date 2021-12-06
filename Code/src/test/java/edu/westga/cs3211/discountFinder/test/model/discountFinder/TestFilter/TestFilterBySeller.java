@@ -16,18 +16,19 @@ public class TestFilterBySeller {
     @Test
     void TestNoItemMatches() {
         DiscountFinder finder = new DiscountFinder();
-
-        ArrayList<Item> filtered = Filter.filterBySeller(finder.getItems(), "publix");
+        Filter tempfilter = new Filter(finder.getItems());
+        ArrayList<Item> filtered = tempfilter.filterBySeller("publix");
 
         assertEquals(filtered.size(), 0);
+        assertEquals(tempfilter, tempfilter);
 
     }
 
     @Test
     void TestOneItemMatches() {
-        DiscountFinder finder = new DiscountFinder();
-
-        ArrayList<Item> filtered = Filter.filterBySeller(finder.getItems(), "Adam");
+    	DiscountFinder finder = new DiscountFinder();
+        Filter tempfilter = new Filter(finder.getItems());
+        ArrayList<Item> filtered = tempfilter.filterBySeller("Adam");
 
         assertEquals(filtered.size(), 1);
         assertEquals(filtered.get(0), finder.getItem(7));
@@ -35,9 +36,9 @@ public class TestFilterBySeller {
 
     @Test
     void TestTwoItemMatches() {
-        DiscountFinder finder = new DiscountFinder();
-
-        ArrayList<Item> filtered = Filter.filterBySeller(finder.getItems(), "Del");
+    	DiscountFinder finder = new DiscountFinder();
+        Filter tempfilter = new Filter(finder.getItems());
+        ArrayList<Item> filtered = tempfilter.filterBySeller("Del");
 
         assertEquals(filtered.size(), 2);
         assertEquals(filtered.get(0), finder.getItem(0));

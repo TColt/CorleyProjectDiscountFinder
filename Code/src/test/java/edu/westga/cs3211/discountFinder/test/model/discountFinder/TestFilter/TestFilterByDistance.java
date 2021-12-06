@@ -15,9 +15,9 @@ public class TestFilterByDistance {
     
     @Test
     void TestItemsWithinTenMilesAway() {
-        DiscountFinder finder = new DiscountFinder();
-
-        ArrayList<Item> filtered = Filter.filterByDistance(finder.getItems(),DistanceEnum.Ten);
+    	DiscountFinder finder = new DiscountFinder();
+        Filter temp = new Filter(finder.getItems());
+        ArrayList<Item> filtered = temp.filterByDistance(DistanceEnum.Ten);
 
 
         assertEquals(filtered.size(), 2);
@@ -27,9 +27,9 @@ public class TestFilterByDistance {
 
     @Test
     void TestItemWithinTwentyMilesAway() {
-        DiscountFinder finder = new DiscountFinder();
-
-        ArrayList<Item> filtered = Filter.filterByDistance(finder.getItems(),DistanceEnum.Twenty);
+    	DiscountFinder finder = new DiscountFinder();
+        Filter temp = new Filter(finder.getItems());
+        ArrayList<Item> filtered = temp.filterByDistance(DistanceEnum.Twenty);
 
 
         assertEquals(filtered.size(), 2);
@@ -39,9 +39,9 @@ public class TestFilterByDistance {
 
     @Test
     void TestItemWithinThirtyMilesAway() {
-        DiscountFinder finder = new DiscountFinder();
-
-        ArrayList<Item> filtered = Filter.filterByDistance(finder.getItems(),DistanceEnum.Thirty);
+    	DiscountFinder finder = new DiscountFinder();
+        Filter temp = new Filter(finder.getItems());
+        ArrayList<Item> filtered = temp.filterByDistance(DistanceEnum.Thirty);
 
 
         assertEquals(filtered.size(), 4);
@@ -53,9 +53,9 @@ public class TestFilterByDistance {
 
     @Test
     void testOverDistance() {
-        DiscountFinder finder = new DiscountFinder();
-
-        ArrayList<Item> filtered = Filter.filterByDistance(finder.getItems(),DistanceEnum.OverThirty);
+    	DiscountFinder finder = new DiscountFinder();
+        Filter temp = new Filter(finder.getItems());
+        ArrayList<Item> filtered = temp.filterByDistance(DistanceEnum.OverThirty);
 
 
         assertEquals(filtered.size(), 4);

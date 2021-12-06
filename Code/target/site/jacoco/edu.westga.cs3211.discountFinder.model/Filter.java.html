@@ -6,71 +6,83 @@ import java.util.ArrayList;
  * filer class
  * @author Team 1
  */
-<span class="nc" id="L9">public class Filter {</span>
+public class Filter {
     
-    public static ArrayList&lt;Item&gt; filterByCategory(ArrayList&lt;Item&gt; list, Category category) {
-<span class="fc" id="L12">        ArrayList&lt;Item&gt; filteredList = new ArrayList&lt;&gt;();</span>
-<span class="fc bfc" id="L13" title="All 2 branches covered.">        for (Item item : list) {</span>
-<span class="fc bfc" id="L14" title="All 2 branches covered.">            if (item.getCategory() == category) {</span>
-<span class="fc" id="L15">                filteredList.add(item);</span>
+	private ArrayList&lt;Item&gt; itemList;
+	
+<span class="fc" id="L13">	public Filter(ArrayList&lt;Item&gt; list) {</span>
+<span class="fc" id="L14">		this.itemList = new ArrayList&lt;Item&gt;();</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">		for (Item item: list) {</span>
+<span class="fc" id="L16">			this.itemList.add(item);</span>
+		}
+<span class="fc" id="L18">	}</span>
+	
+	public ArrayList&lt;Item&gt; getItems() {
+<span class="fc" id="L21">		return this.itemList;</span>
+	}
+	
+    public ArrayList&lt;Item&gt; filterByCategory(Category category) {
+<span class="fc" id="L25">    	ArrayList&lt;Item&gt; tempList = new ArrayList&lt;Item&gt;();</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (Item item : this.itemList) {</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            if (item.getCategory() == category) {</span>
+<span class="fc" id="L28">                tempList.add(item);</span>
             }
         }
-<span class="fc" id="L18">        return filteredList;</span>
+<span class="fc" id="L31">        return tempList;</span>
     }
 
-    public static ArrayList&lt;Item&gt; filterBySeller(ArrayList&lt;Item&gt; list, String seller) {
-<span class="fc" id="L22">        ArrayList&lt;Item&gt; filteredList = new ArrayList&lt;&gt;();</span>
-<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (Item item : list) {</span>
-<span class="fc bfc" id="L24" title="All 2 branches covered.">            if (item.getSeller().getSellerName().toLowerCase().contains(seller.toLowerCase())) {</span>
-<span class="fc" id="L25">                filteredList.add(item);</span>
+    public ArrayList&lt;Item&gt; filterBySeller(String seller) {
+<span class="fc" id="L35">        ArrayList&lt;Item&gt; filteredList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (Item item : this.itemList) {</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">            if (item.getSeller().getSellerName().toLowerCase().contains(seller.toLowerCase())) {</span>
+<span class="fc" id="L38">                filteredList.add(item);</span>
             }
         }
-<span class="fc" id="L28">        return filteredList;</span>
+<span class="fc" id="L41">        return filteredList;</span>
     }
 
-    public static ArrayList&lt;Item&gt; filterByName(ArrayList&lt;Item&gt; list, String name) {
-<span class="fc" id="L32">        ArrayList&lt;Item&gt; filteredList = new ArrayList&lt;&gt;();</span>
-<span class="fc bfc" id="L33" title="All 2 branches covered.">        for (Item item : list) {</span>
-<span class="fc bfc" id="L34" title="All 2 branches covered.">            if (item.getName().toLowerCase().startsWith(name.toLowerCase())) {</span>
-<span class="fc" id="L35">                filteredList.add(item);</span>
+    public ArrayList&lt;Item&gt; filterByName(String name) {
+<span class="fc" id="L45">        ArrayList&lt;Item&gt; filteredList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        for (Item item : this.itemList) {</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">            if (item.getName().toLowerCase().startsWith(name.toLowerCase())) {</span>
+<span class="fc" id="L48">                filteredList.add(item);</span>
             }
         }
-<span class="fc" id="L38">        return filteredList;</span>
+<span class="fc" id="L51">        return filteredList;</span>
     }
 
-    public static ArrayList&lt;Item&gt; filterByDistance(ArrayList&lt;Item&gt; list, DistanceEnum distanceto) {
-<span class="fc" id="L42">        ArrayList&lt;Item&gt; filteredList = new ArrayList&lt;&gt;();</span>
-<span class="fc bfc" id="L43" title="All 2 branches covered.">        for (Item item : list) {</span>
+    public ArrayList&lt;Item&gt; filterByDistance(DistanceEnum distanceto) {
+<span class="fc" id="L55">        ArrayList&lt;Item&gt; filteredList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        for (Item item : this.itemList) {</span>
 
-<span class="fc bfc" id="L45" title="All 4 branches covered.">            switch (distanceto) {</span>
+<span class="fc bfc" id="L58" title="All 4 branches covered.">            switch (distanceto) {</span>
                 case Ten:
-<span class="fc bfc" id="L47" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &lt;= 10) {</span>
-<span class="fc" id="L48">                        filteredList.add(item);</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &lt;= 10) {</span>
+<span class="fc" id="L61">                        filteredList.add(item);</span>
                     }
-<span class="fc" id="L50">                    break;</span>
+<span class="fc" id="L63">                    break;</span>
                 
                 case Twenty:
-<span class="fc bfc" id="L53" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &lt;= 20) {</span>
-<span class="fc" id="L54">                        filteredList.add(item);</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &lt;= 20) {</span>
+<span class="fc" id="L67">                        filteredList.add(item);</span>
                     }
-<span class="fc" id="L56">                    break;</span>
+<span class="fc" id="L69">                    break;</span>
                 
                 case Thirty:
-<span class="fc bfc" id="L59" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &lt;= 30) {</span>
-<span class="fc" id="L60">                        filteredList.add(item);</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &lt;= 30) {</span>
+<span class="fc" id="L73">                        filteredList.add(item);</span>
                     }
-<span class="fc" id="L62">                    break;</span>
+<span class="fc" id="L75">                    break;</span>
             
                 default:
-<span class="fc bfc" id="L65" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &gt; 30) {</span>
-<span class="fc" id="L66">                        filteredList.add(item);</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">                    if (item.getSeller().getDistance() &gt; 30) {</span>
+<span class="fc" id="L79">                        filteredList.add(item);</span>
                     }
                     break;
             }
         }
-<span class="fc" id="L71">        return filteredList;</span>
+<span class="fc" id="L84">        return filteredList;</span>
     }
-
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
