@@ -6,21 +6,34 @@ import java.util.ArrayList;
  * filer class
  * @author Team 1
  */
-public final class Filter {
+public class Filter {
     
-    public static ArrayList<Item> filterByCategory(ArrayList<Item> list, Category category) {
-        ArrayList<Item> filteredList = new ArrayList<>();
-        for (Item item : list) {
+	private ArrayList<Item> itemList;
+	
+	public Filter(ArrayList<Item> list) {
+		this.itemList = new ArrayList<Item>();
+		for (Item item: list) {
+			this.itemList.add(item);
+		}
+	}
+	
+	public ArrayList<Item> getItems() {
+		return this.itemList;
+	}
+	
+    public ArrayList<Item> filterByCategory(Category category) {
+    	ArrayList<Item> tempList = new ArrayList<Item>();
+        for (Item item : this.itemList) {
             if (item.getCategory() == category) {
-                filteredList.add(item);
+                tempList.add(item);
             }
         }
-        return filteredList;
+        return tempList;
     }
 
-    public static ArrayList<Item> filterBySeller(ArrayList<Item> list, String seller) {
+    public ArrayList<Item> filterBySeller(String seller) {
         ArrayList<Item> filteredList = new ArrayList<>();
-        for (Item item : list) {
+        for (Item item : this.itemList) {
             if (item.getSeller().getSellerName().toLowerCase().contains(seller.toLowerCase())) {
                 filteredList.add(item);
             }
@@ -28,9 +41,9 @@ public final class Filter {
         return filteredList;
     }
 
-    public static ArrayList<Item> filterByName(ArrayList<Item> list, String name) {
+    public ArrayList<Item> filterByName(String name) {
         ArrayList<Item> filteredList = new ArrayList<>();
-        for (Item item : list) {
+        for (Item item : this.itemList) {
             if (item.getName().toLowerCase().startsWith(name.toLowerCase())) {
                 filteredList.add(item);
             }
@@ -38,9 +51,9 @@ public final class Filter {
         return filteredList;
     }
 
-    public static ArrayList<Item> filterByDistance(ArrayList<Item> list, DistanceEnum distanceto) {
+    public ArrayList<Item> filterByDistance(DistanceEnum distanceto) {
         ArrayList<Item> filteredList = new ArrayList<>();
-        for (Item item : list) {
+        for (Item item : this.itemList) {
 
             switch (distanceto) {
                 case Ten:
@@ -70,6 +83,5 @@ public final class Filter {
         }
         return filteredList;
     }
-
 
 }

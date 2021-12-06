@@ -10,24 +10,32 @@ import edu.westga.cs3211.discountFinder.model.Category;
 import edu.westga.cs3211.discountFinder.model.DiscountFinder;
 import edu.westga.cs3211.discountFinder.model.Filter;
 import edu.westga.cs3211.discountFinder.model.Item;
+import edu.westga.cs3211.discountFinder.model.Seller;
 
 class TestFilterByCategory {
     @Test
     void TestFilterForElectronics(){
-        DiscountFinder finder = new DiscountFinder();
-        Filter filter = new Filter();
-        ArrayList<Item> filtered = filter.filterByCategory(finder.getItems(), Category.ELECTRONICS);
+        ArrayList<Item> items = new ArrayList<Item>();
+        
+        Seller seller = new Seller(20, "store");
+        
+        Item item1 = new Item("electro", seller, Category.ELECTRONICS);
+        
+        items.add(item1);
 
-        assertEquals(filtered.get(0), finder.getItem(0));
-        assertEquals(filtered.get(1), finder.getItem(6));
+        Filter temp = new Filter(items);
+        
+
+        
+        assertEquals(temp.filterByCategory(Category.ELECTRONICS).get(0).getName(), "electro");
 
     }
 
     @Test
     void TestFilterForClothing() {
-        DiscountFinder finder = new DiscountFinder();
-
-        ArrayList<Item> filtered = Filter.filterByCategory(finder.getItems(), Category.CLOTHING);
+    	DiscountFinder finder = new DiscountFinder();
+        Filter temp = new Filter(finder.getItems());
+        ArrayList<Item> filtered = temp.filterByCategory(Category.CLOTHING);
 
         assertEquals(filtered.get(0), finder.getItem(1));
         assertEquals(filtered.get(1), finder.getItem(2));
@@ -35,27 +43,30 @@ class TestFilterByCategory {
 
     @Test
     void TestFilterForAppliances() {
-        DiscountFinder finder = new DiscountFinder();
+    	DiscountFinder finder = new DiscountFinder();
+        Filter temp = new Filter(finder.getItems());
 
-        ArrayList<Item> filtered = Filter.filterByCategory(finder.getItems(), Category.APPLIANCES);
+        ArrayList<Item> filtered = temp.filterByCategory(Category.APPLIANCES);
 
         assertEquals(filtered.get(0), finder.getItem(7));
     }
 
     @Test
     void TestFilterForFood() {
-        DiscountFinder finder = new DiscountFinder();
+    	DiscountFinder finder = new DiscountFinder();
+        Filter temp = new Filter(finder.getItems());
 
-        ArrayList<Item> filtered = Filter.filterByCategory(finder.getItems(), Category.FOOD);
+        ArrayList<Item> filtered = temp.filterByCategory(Category.FOOD);
 
         assertEquals(filtered.get(0), finder.getItem(5));
     }
 
     @Test
     void TestFilterForOther() {
-        DiscountFinder finder = new DiscountFinder();
+    	DiscountFinder finder = new DiscountFinder();
+        Filter temp = new Filter(finder.getItems());
 
-        ArrayList<Item> filtered = Filter.filterByCategory(finder.getItems(), Category.OTHER);
+        ArrayList<Item> filtered = temp.filterByCategory(Category.OTHER);
 
         assertEquals(filtered.get(0), finder.getItem(3));
         assertEquals(filtered.get(1), finder.getItem(4));  

@@ -1,5 +1,6 @@
 package edu.westga.cs3211.discountFinder.view.codebehind;
 
+
 import edu.westga.cs3211.discountFinder.model.Category;
 import edu.westga.cs3211.discountFinder.model.DiscountFinder;
 import edu.westga.cs3211.discountFinder.model.DistanceEnum;
@@ -52,12 +53,13 @@ public class MainWindow {
     private ComboBox<DistanceEnum> distanceFromComboBox;
 	
 	private DiscountFinder finder;
-
+	
+	private Filter filter;
 
 
     private void initializeListView() {
 		// this.itemsListView.itemsProperty().bind(new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.getItems())));
-		ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.getItems()));
+		ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.filter.getItems()));
 		this.itemsListView.itemsProperty().setValue(filtered);
 	}
 
@@ -67,7 +69,7 @@ public class MainWindow {
 		if (this.filterItemByTextField.getText().isEmpty()) {
 			this.initializeListView();
 		} else {
-			ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(Filter.filterByName(this.finder.getItems(), this.filterItemByTextField.getText())));
+			ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.filter.filterByName(this.filterItemByTextField.getText())));
             
 			this.itemsListView.itemsProperty().setValue(filtered);
 		}
@@ -75,7 +77,7 @@ public class MainWindow {
 
 	@FXML
     void handleClearButton(ActionEvent event) {
-		this.itemsListView.itemsProperty().setValue(new SimpleListProperty<Item>(FXCollections.observableArrayList(this.finder.getItems())));
+		this.itemsListView.itemsProperty().setValue(new SimpleListProperty<Item>(FXCollections.observableArrayList(this.filter.getItems())));
     }
 
 	@FXML
@@ -93,7 +95,7 @@ public class MainWindow {
         if (this.filterBySellerTextField.getText().isEmpty()) {
 			this.initializeListView();
 		} else {
-			ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(Filter.filterBySeller(this.finder.getItems(), this.filterBySellerTextField.getText())));
+			ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.filter.filterBySeller(this.filterBySellerTextField.getText())));
             
 			this.itemsListView.itemsProperty().setValue(filtered);
 		} 
@@ -103,7 +105,7 @@ public class MainWindow {
 
         this.distanceFromComboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldDistance, newDistance) -> {
             if (newDistance != null) {
-                ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(Filter.filterByDistance(this.finder.getItems(), newDistance)));
+                ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.filter.filterByDistance(newDistance)));
                 this.itemsListView.itemsProperty().setValue(filtered);
             } else if (oldDistance == null) {
                 this.initializeListView();
@@ -135,7 +137,7 @@ public class MainWindow {
 
         this.categoriesCombobox.getSelectionModel().selectedItemProperty().addListener((observable, oldCategory, newCategory) -> {
             if (newCategory != null) {
-                ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(Filter.filterByCategory(this.finder.getItems(), newCategory)));
+                ObservableList<Item> filtered = new SimpleListProperty<Item>(FXCollections.observableArrayList(this.filter.filterByCategory(newCategory)));
                 this.itemsListView.itemsProperty().setValue(filtered);
             } else if (oldCategory == null) {
                 this.initializeListView();
@@ -144,10 +146,16 @@ public class MainWindow {
     }
 
     /**
-     * Initializes Webpage
+     * Initializes everything
      */
     @FXML
 	public void initialize() {
+    	
+    	this.finder = new DiscountFinder();
+    	
+    	this.filter = new Filter(this.finder.getItems());
+    	
+    	
 		this.finder = new DiscountFinder();
 		this.initializeListView();
 		this.populateComboBox();

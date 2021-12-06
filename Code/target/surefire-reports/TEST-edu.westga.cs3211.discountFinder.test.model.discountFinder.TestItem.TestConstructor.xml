@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0.01" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0.029" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="16"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-16.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\tcoltra1\AppData\Local\Temp\surefire9237378162244989065\surefirebooter17953353205114954155.jar C:\Users\tcoltra1\AppData\Local\Temp\surefire9237378162244989065 2021-12-05T18-15-18_738-jvmRun1 surefire5288719509071001455tmp surefire_08130460583525940104tmp"/>
+    <property name="sun.java.command" value="C:\Users\tcoltra1\AppData\Local\Temp\surefire12724857089945340858\surefirebooter9494317607313607068.jar C:\Users\tcoltra1\AppData\Local\Temp\surefire12724857089945340858 2021-12-05T19-57-15_342-jvmRun1 surefire9820094123368305178tmp surefire_017706491862806722230tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\tcoltra1\Desktop\New folder\CorleyProjectDiscountFinder\Code\target\test-classes;C:\Users\tcoltra1\Desktop\New folder\CorleyProjectDiscountFinder\Code\target\classes;C:\Users\tcoltra1\.m2\repository\org\openjfx\javafx-controls\15.0.1\javafx-controls-15.0.1.jar;C:\Users\tcoltra1\.m2\repository\org\openjfx\javafx-controls\15.0.1\javafx-controls-15.0.1-win.jar;C:\Users\tcoltra1\.m2\repository\org\openjfx\javafx-graphics\15.0.1\javafx-graphics-15.0.1.jar;C:\Users\tcoltra1\.m2\repository\org\openjfx\javafx-graphics\15.0.1\javafx-graphics-15.0.1-win.jar;C:\Users\tcoltra1\.m2\repository\org\openjfx\javafx-base\15.0.1\javafx-base-15.0.1.jar;C:\Users\tcoltra1\.m2\repository\org\openjfx\javafx-base\15.0.1\javafx-base-15.0.1-win.jar;C:\Users\tcoltra1\.m2\repository\org\openjfx\javafx-fxml\15.0.1\javafx-fxml-15.0.1.jar;C:\Users\tcoltra1\.m2\repository\org\openjfx\javafx-fxml\15.0.1\javafx-fxml-15.0.1-win.jar;C:\Users\tcoltra1\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.1\junit-jupiter-api-5.5.1.jar;C:\Users\tcoltra1\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\tcoltra1\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\tcoltra1\.m2\repository\org\junit\platform\junit-platform-commons\1.5.1\junit-platform-commons-1.5.1.jar;C:\Users\tcoltra1\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.1\junit-jupiter-engine-5.5.1.jar;C:\Users\tcoltra1\.m2\repository\org\junit\platform\junit-platform-engine\1.5.1\junit-platform-engine-1.5.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\tcoltra1\AppData\Local\Temp\surefire9237378162244989065\surefirebooter17953353205114954155.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\tcoltra1\AppData\Local\Temp\surefire12724857089945340858\surefirebooter9494317607313607068.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="16.0.2+7-67"/>
@@ -56,8 +56,8 @@
     <property name="java.class.version" value="60.0"/>
   </properties>
   <testcase name="testToStringFavorite" classname="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0"/>
-  <testcase name="testNullName" classname="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0.005"/>
-  <testcase name="testEmptyName" classname="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0"/>
-  <testcase name="testToStringNoFavorited" classname="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0"/>
-  <testcase name="testValidConstruction" classname="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0"/>
+  <testcase name="testNullName" classname="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0.002"/>
+  <testcase name="testEmptyName" classname="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0.012"/>
+  <testcase name="testToStringNoFavorited" classname="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0.002"/>
+  <testcase name="testValidConstruction" classname="edu.westga.cs3211.discountFinder.test.model.discountFinder.TestItem.TestConstructor" time="0.012"/>
 </testsuite>
