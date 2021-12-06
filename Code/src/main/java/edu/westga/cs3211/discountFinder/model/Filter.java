@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * filer class
  * @author Team 1
  */
-public class Filter {
+public final class Filter {
     
     public static ArrayList<Item> filterByCategory(ArrayList<Item> list, Category category) {
         ArrayList<Item> filteredList = new ArrayList<>();

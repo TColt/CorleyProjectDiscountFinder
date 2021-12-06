@@ -15,8 +15,8 @@ class TestFilterByCategory {
     @Test
     void TestFilterForElectronics(){
         DiscountFinder finder = new DiscountFinder();
-
-        ArrayList<Item> filtered = Filter.filterByCategory(finder.getItems(), Category.ELECTRONICS);
+        Filter filter = new Filter();
+        ArrayList<Item> filtered = filter.filterByCategory(finder.getItems(), Category.ELECTRONICS);
 
         assertEquals(filtered.get(0), finder.getItem(0));
         assertEquals(filtered.get(1), finder.getItem(6));
