@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sample-Code-Coverage-Project</a> &gt; <a href="index.source.html" class="el_package">edu.westga.cs3211.discountFinder.view.codebehind</a> &gt; <span class="el_source">MainWindow.java</span></div><h1>MainWindow.java</h1><pre class="source lang-java linenums">package edu.westga.cs3211.discountFinder.view.codebehind;
 
+
 import edu.westga.cs3211.discountFinder.model.Category;
 import edu.westga.cs3211.discountFinder.model.DiscountFinder;
+import edu.westga.cs3211.discountFinder.model.DistanceEnum;
+import edu.westga.cs3211.discountFinder.model.Filter;
 import edu.westga.cs3211.discountFinder.model.Item;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -13,10 +16,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-/*
-
-*/
-<span class="nc" id="L19">public class MainWindow {</span>
+/**
+ * MainWindow code behind
+ * @author Team 1
+ */
+<span class="nc" id="L23">public class MainWindow {</span>
 	@FXML
     private Button addItemFilterButton;
 
@@ -41,70 +45,125 @@ import javafx.scene.control.TextField;
     @FXML
     private TextField filterByDistanceTextField;
 
-    @FXML
-    private Button addDistanceFilterButton;
 
     @FXML
     private ComboBox&lt;Category&gt; categoriesCombobox;
+
+    @FXML
+    private ComboBox&lt;DistanceEnum&gt; distanceFromComboBox;
 	
 	private DiscountFinder finder;
+	
+	private Filter filter;
 
 
     private void initializeListView() {
 		// this.itemsListView.itemsProperty().bind(new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.finder.getItems())));
-<span class="nc" id="L55">		ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.finder.getItems()));</span>
-<span class="nc" id="L56">		this.itemsListView.itemsProperty().setValue(filtered);</span>
-<span class="nc" id="L57">	}</span>
+<span class="nc" id="L62">		ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.filter.getItems()));</span>
+<span class="nc" id="L63">		this.itemsListView.itemsProperty().setValue(filtered);</span>
+<span class="nc" id="L64">	}</span>
 
-	private void populateList() {
-<span class="nc" id="L60">	}</span>
 
 	@FXML
     void handleFindItemButton(ActionEvent event) {
-		// if (this.filterItemByTextField.getText().isEmpty()) {
-		// 	this.initializeListView();
-		// } else {
-		// 	ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.finder.findDiscountsForItem(this.filterItemByTextField.getText())));
-		// 	this.itemsListView.itemsProperty().setValue(filtered);
-		// }
-<span class="nc" id="L70">    }</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">		if (this.filterItemByTextField.getText().isEmpty()) {</span>
+<span class="nc" id="L70">			this.initializeListView();</span>
+<span class="nc" id="L71">		} else {</span>
+<span class="nc" id="L72">			ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.filter.filterByName(this.filterItemByTextField.getText())));</span>
+            
+<span class="nc" id="L74">			this.itemsListView.itemsProperty().setValue(filtered);</span>
+		}
+<span class="nc" id="L76">    }</span>
 
 	@FXML
     void handleClearButton(ActionEvent event) {
-<span class="nc" id="L74">		this.itemsListView.itemsProperty().setValue(new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.finder.getItems())));</span>
-<span class="nc" id="L75">    }</span>
+<span class="nc" id="L80">		this.itemsListView.itemsProperty().setValue(new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.filter.getItems())));</span>
+<span class="nc" id="L81">    }</span>
 
 	@FXML
     void onFavoriteSeller(ActionEvent event) {
-
-<span class="nc" id="L80">    }</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        if (this.itemsListView.getSelectionModel().getSelectedItem() != null) {</span>
+            
+<span class="nc" id="L87">            this.itemsListView.getSelectionModel().getSelectedItem().getSeller().setFavorite();</span>
+<span class="nc" id="L88">            this.initializeListView();</span>
+        }
+        
+<span class="nc" id="L91">    }</span>
 
     @FXML
     void handleDisplaySellerButton(ActionEvent event) {
+<span class="nc bnc" id="L95" title="All 2 branches missed.">        if (this.filterBySellerTextField.getText().isEmpty()) {</span>
+<span class="nc" id="L96">			this.initializeListView();</span>
+<span class="nc" id="L97">		} else {</span>
+<span class="nc" id="L98">			ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.filter.filterBySeller(this.filterBySellerTextField.getText())));</span>
+            
+<span class="nc" id="L100">			this.itemsListView.itemsProperty().setValue(filtered);</span>
+		} 
+<span class="nc" id="L102">    }</span>
 
-<span class="nc" id="L85">    }</span>
+    private void setupListenerForDistanceCombobox() {
 
-    @FXML
-    void handleDistanceFilterButton(ActionEvent event) {
-		
-<span class="nc" id="L90">    }</span>
+<span class="nc" id="L106">        this.distanceFromComboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldDistance, newDistance) -&gt; {</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">            if (newDistance != null) {</span>
+<span class="nc" id="L108">                ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.filter.filterByDistance(newDistance)));</span>
+<span class="nc" id="L109">                this.itemsListView.itemsProperty().setValue(filtered);</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">            } else if (oldDistance == null) {</span>
+<span class="nc" id="L111">                this.initializeListView();</span>
+            }
+<span class="nc" id="L113">        });</span>
+<span class="nc" id="L114">    }</span>
+/*
+*/
+    private void setupListenerForListSelect() {
+<span class="nc" id="L118">        this.itemsListView.getSelectionModel().selectedItemProperty().addListener((observable, oldSelect, newSelect) -&gt; {</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">            if (newSelect != null) {</span>
+<span class="nc" id="L120">                this.filterItemByTextField.setText(newSelect.getName());</span>
+<span class="nc" id="L121">                this.filterBySellerTextField.setText(newSelect.getSeller().getSellerName());</span>
+            }
+<span class="nc" id="L123">        });</span>
+<span class="nc" id="L124">    }</span>
 
 	private void populateComboBox() {
-<span class="nc" id="L93">		this.categoriesCombobox.getItems().add(Category.APPLIANCES);</span>
-<span class="nc" id="L94">		this.categoriesCombobox.getItems().add(Category.CLOTHING);</span>
-<span class="nc" id="L95">		this.categoriesCombobox.getItems().add(Category.ELECTRONICS);</span>
-<span class="nc" id="L96">		this.categoriesCombobox.getItems().add(Category.FOOD);</span>
-<span class="nc" id="L97">		this.categoriesCombobox.getItems().add(Category.OTHER);</span>
-<span class="nc" id="L98">	}</span>
-    /*
-    */
+<span class="nc bnc" id="L127" title="All 2 branches missed.">        for (Category category : Category.values()) {</span>
+<span class="nc" id="L128">            this.categoriesCombobox.getItems().add(category);</span>
+        }
+
+<span class="nc bnc" id="L131" title="All 2 branches missed.">        for (DistanceEnum distanceEnum : DistanceEnum.values()) {</span>
+<span class="nc" id="L132">            this.distanceFromComboBox.getItems().add(distanceEnum);</span>
+        }
+<span class="nc" id="L134">	}</span>
+
+    private void setupListenerForCategoriesCombobox() {
+
+<span class="nc" id="L138">        this.categoriesCombobox.getSelectionModel().selectedItemProperty().addListener((observable, oldCategory, newCategory) -&gt; {</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">            if (newCategory != null) {</span>
+<span class="nc" id="L140">                ObservableList&lt;Item&gt; filtered = new SimpleListProperty&lt;Item&gt;(FXCollections.observableArrayList(this.filter.filterByCategory(newCategory)));</span>
+<span class="nc" id="L141">                this.itemsListView.itemsProperty().setValue(filtered);</span>
+<span class="nc bnc" id="L142" title="All 2 branches missed.">            } else if (oldCategory == null) {</span>
+<span class="nc" id="L143">                this.initializeListView();</span>
+            }
+<span class="nc" id="L145">        });</span>
+<span class="nc" id="L146">    }</span>
+
+    /**
+     * Initializes everything
+     */
     @FXML
 	public void initialize() {
-<span class="nc" id="L103">		this.finder = new DiscountFinder();</span>
-<span class="nc" id="L104">		this.populateList();</span>
-<span class="nc" id="L105">		this.initializeListView();</span>
-<span class="nc" id="L106">		this.populateComboBox();</span>
-<span class="nc" id="L107">	}</span>
+    	
+<span class="nc" id="L154">    	this.finder = new DiscountFinder();</span>
+    	
+<span class="nc" id="L156">    	this.filter = new Filter(this.finder.getItems());</span>
+    	
+    	
+<span class="nc" id="L159">		this.finder = new DiscountFinder();</span>
+<span class="nc" id="L160">		this.initializeListView();</span>
+<span class="nc" id="L161">		this.populateComboBox();</span>
+<span class="nc" id="L162">        this.setupListenerForCategoriesCombobox();</span>
+<span class="nc" id="L163">        this.setupListenerForDistanceCombobox();</span>
+
+<span class="nc" id="L165">        this.setupListenerForListSelect();</span>
+<span class="nc" id="L166">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

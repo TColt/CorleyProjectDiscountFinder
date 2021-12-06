@@ -1,7 +1,7 @@
 package edu.westga.cs3211.discountFinder.model;
 
 /**Discount Finder class
- * 
+ * @author Team 1
  */
 import java.util.ArrayList;
 
@@ -31,15 +31,6 @@ public class DiscountFinder {
     }
 
     /**
-     * 
-     * @param item the item in the list
-     */
-
-    public void addItem(Item item) {
-        this.items.add(item);
-    }
-
-    /**
      * get the index of the item
      * 
      * @param index the place in the list
@@ -47,15 +38,6 @@ public class DiscountFinder {
      */
     public Item getItem(int index) {
         return this.items.get(index);
-    }
-
-    /**
-     * get the size of the list
-     * 
-     * @return the size of the list
-     */
-    public int size() {
-        return this.items.size();
     }
 
 }
